@@ -16,5 +16,11 @@ namespace ForceDirectedGraph
                 MarkerEnd = "arrow-head"
             }.Render(document);
         }
+
+        public bool Connects(Node a, Node b)
+        {
+            return a == Source && b == Target
+                || a == Target && b == Source;
+        }
     }
 }

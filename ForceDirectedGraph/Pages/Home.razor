@@ -11,27 +11,40 @@
 {
     private static Node a = new Node
         {
-            Center = new Point(100, 100),
             Text = "A Node"
+        };
+
+    private static Node a2 = new Node
+        {
+            Text = "A2 Node"
+        };
+
+    private static Node a3 = new Node
+        {
+            Text = "A3 Node"
+        };
+
+    private static Node a4 = new Node
+        {
+            Text = "A4 Node"
         };
 
 
     private static Node b = new Node
         {
-            Center = new Point(100, 300),
             Text = "B Node"
         };
 
     private static Node c = new Node
         {
-            Center = new Point(300, 200),
+            Center = new Point(400, 500),
             Text = "C Node"
         };
 
 
     private List<Node> nodes = new List<Node>
     {
-        a, b, c
+        a, b, c, a2, a3, a4
     };
 
     private List<(Node source, Node target)> edges = new()
@@ -39,5 +52,9 @@
             (a, b),
             (b, c),
             (c, a),
+            (a, a2),
+            (a, a3),
+            (a, a4),
+            (c, a2),
         };
 }

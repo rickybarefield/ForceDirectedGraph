@@ -5,7 +5,7 @@ namespace ForceDirectedGraph
 {
     public class Node : IRender
     {
-        public required Point Center { get; init; }
+        public Point Center { get; set; } = new Point(200, 200);
 
         public required string Text { get; init; }
 

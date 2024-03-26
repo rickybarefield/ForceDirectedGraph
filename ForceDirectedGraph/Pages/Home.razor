@@ -1,7 +1,43 @@
 ﻿@page "/"
 
+@using System.Linq.Expressions;
+
 <PageTitle>Home</PageTitle>
 
-<svg viewBox="0 0 1000 1000">
-    <circle cx="200" cy="200" r="100" stroke-width="2px" stroke="red" fill="white" />
-</svg>
+<Graph Nodes=@nodes Connections=@edges />
+
+
+@code
+{
+    private static Node a = new Node
+        {
+            Center = new Point(100, 100),
+            Text = "A Node"
+        };
+
+
+    private static Node b = new Node
+        {
+            Center = new Point(100, 300),
+            Text = "B Node"
+        };
+
+    private static Node c = new Node
+        {
+            Center = new Point(300, 200),
+            Text = "C Node"
+        };
+
+
+    private List<Node> nodes = new List<Node>
+    {
+        a, b, c
+    };
+
+    private List<(Node source, Node target)> edges = new()
+        {
+            (a, b),
+            (b, c),
+            (c, a),
+        };
+}

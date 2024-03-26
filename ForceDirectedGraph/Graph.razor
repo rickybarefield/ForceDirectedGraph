@@ -1,0 +1,11 @@
+﻿<svg viewBox="0 0 1000 1000">
+    <defs>
+        <marker id='arrow-head' orient="auto"
+                markerWidth='4' markerHeight='4'
+                refX='0.1' refY='2'>
+            <path d='M0,0 V4 L2,2 Z' fill="red" />
+        </marker>
+    </defs>
+    @((MarkupString)String.Join("\n", EdgeElements.Select(e => e.OuterHtml)))
+    @((MarkupString)String.Join("\n", NodeElements.Select(e => e.OuterHtml)))
+</svg>

@@ -19,6 +19,12 @@ namespace ForceDirectedGraph
 
         private List<Edge> edges;
 
+        public Point MinPoint { get; private set; } = new Point(0, 0);
+        public Point MaxPoint { get; private set; } = new Point(1000, 1000);
+
+        public double Width { get => MaxPoint.X - MinPoint.X; }
+        public double Height { get => MaxPoint.Y - MinPoint.Y; }
+
         [Parameter]
         public required List<(Node source, Node target)> Connections
         {
@@ -79,6 +85,9 @@ namespace ForceDirectedGraph
 
         public Task ApplyForcesAsync() 
         {
+            MinPoint = Nodes.First().Center;
+            MaxPoint = Nodes.First().Center;
+
             Nodes.ForEach(n =>
             {
                 double mx = 0;
@@ -104,6 +113,9 @@ namespace ForceDirectedGraph
                 });
 
                 var newCenter = n.Center.Translate(mx, my);
+
+                MinPoint = new Point(Math.Min(newCenter.X, MinPoint.X), Math.Min(newCenter.Y, MinPoint.Y));
+                MaxPoint = new Point(Math.Max(newCenter.X, MaxPoint.X), Math.Max(newCenter.Y, MaxPoint.Y));
 
                 n.Center = newCenter;
             });

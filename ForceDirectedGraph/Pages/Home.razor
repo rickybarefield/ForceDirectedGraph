@@ -4,8 +4,9 @@
 
 <PageTitle>Home</PageTitle>
 
+<div style="width: 900px; height: 700px;">
 <Graph Nodes=@nodes Connections=@edges />
-
+</div>
 
 @code
 {
@@ -37,14 +38,33 @@
 
     private static Node c = new Node
         {
-            Center = new Point(400, 500),
             Text = "C Node"
+        };
+
+    private static Node c1 = new Node
+        {
+            Text = "C1 Node"
+        };
+
+    private static Node c2 = new Node
+        {
+            Text = "C2 Node"
+        };
+
+    private static Node c3 = new Node
+        {
+            Text = "C3 Node"
+        };
+
+    private static Node c4 = new Node
+        {
+            Text = "C4 Node"
         };
 
 
     private List<Node> nodes = new List<Node>
     {
-        a, b, c, a2, a3, a4
+        a, b, c, a2, a3, a4, c1, c2, c3, c4
     };
 
     private List<(Node source, Node target)> edges = new()
@@ -55,6 +75,9 @@
             (a, a2),
             (a, a3),
             (a, a4),
-            (c, a2),
+            (c, c1),
+            (c, c2),
+            (c, c3),
+            (c, c4),
         };
 }

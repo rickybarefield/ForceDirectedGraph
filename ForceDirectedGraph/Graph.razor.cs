@@ -13,6 +13,7 @@ namespace ForceDirectedGraph
         private static double EdgeSpringConstant = 1;
         private static double EdgeSpringLength = 200;
         private static double NodeRepulsion = 800;
+        private static int InitialIterations = 200;
 
         [Parameter]
         public required List<Node> Nodes { get; init; }
@@ -53,6 +54,11 @@ namespace ForceDirectedGraph
         protected async override Task OnInitializedAsync()
         {
             document = await BrowsingContext.New().OpenAsync(res => res.Content($"<svg></svg>"));
+            RandomizeNodePositions();
+            for (var i = 0; i < InitialIterations; i++)
+            {
+                await ApplyForcesAsync();
+            }
             await base.OnInitializedAsync();
         }
 
@@ -60,7 +66,6 @@ namespace ForceDirectedGraph
         {
             if (!firstRender) return;
 
-            RandomizeNodePositions();
 
             while (true)
             {

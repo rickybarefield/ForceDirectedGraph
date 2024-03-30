@@ -1,6 +1,6 @@
 ﻿using AngleSharp.Dom;
 
-namespace ForceDirectedGraph.SvgElements
+namespace RickyBarefield.ForceDirectedGraph.SvgElements
 {
     public class Circle : SvgElement
     {

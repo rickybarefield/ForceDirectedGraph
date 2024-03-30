@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 using System.Linq.Expressions;
 using System.Xml.Linq;
 
-namespace ForceDirectedGraph
+namespace RickyBarefield.ForceDirectedGraph
 {
     public partial class Graph : ComponentBase
     {

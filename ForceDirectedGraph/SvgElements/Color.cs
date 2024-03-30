@@ -1,4 +1,4 @@
-﻿namespace ForceDirectedGraph.SvgElements
+﻿namespace RickyBarefield.ForceDirectedGraph.SvgElements
 {
     public record Color(double r, double g, double b)
     {

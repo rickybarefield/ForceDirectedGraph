@@ -1,5 +1,5 @@
 ﻿
-namespace ForceDirectedGraph
+namespace RickyBarefield.ForceDirectedGraph
 {
     public record Point(double X, double Y)
     {

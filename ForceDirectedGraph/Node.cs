@@ -1,7 +1,7 @@
 ﻿using AngleSharp.Dom;
-using ForceDirectedGraph.SvgElements;
+using RickyBarefield.ForceDirectedGraph.SvgElements;
 
-namespace ForceDirectedGraph
+namespace RickyBarefield.ForceDirectedGraph
 {
     public class Node : IRender
     {

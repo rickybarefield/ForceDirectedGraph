@@ -1,6 +1,6 @@
 ﻿using AngleSharp.Dom;
 
-namespace ForceDirectedGraph
+namespace RickyBarefield.ForceDirectedGraph
 {
     public interface IRender
     {

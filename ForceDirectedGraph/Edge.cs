@@ -1,6 +1,6 @@
-﻿using ForceDirectedGraph.SvgElements;
+﻿using RickyBarefield.ForceDirectedGraph.SvgElements;
 
-namespace ForceDirectedGraph
+namespace RickyBarefield.ForceDirectedGraph
 {
     public class Edge : IRender
     {
